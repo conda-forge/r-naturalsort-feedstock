@@ -1,5 +1,4 @@
 {% set version = '0.1.3' %}
-
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -8,34 +7,35 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: naturalsort_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/naturalsort_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/naturalsort/naturalsort_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/naturalsort_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/naturalsort/naturalsort_{{ version }}.tar.gz
   sha256: cd38a9c5f323f61459e6096cdbf4493851d40497baf671af4f8dfe9a7c00e857
 
 build:
-  number: 1000
+  merge_build_host: True  # [win]
+  number: 1001
+  noarch: generic
   rpaths:
     - lib/R/lib/
     - lib/
 
-# Suggests: testthat
 requirements:
   build:
-    - r-base
 
+  host:
+    - r-base
   run:
     - r-base
 
 test:
   commands:
-    - $R -e "library('naturalsort')"  # [not win]
+    - $R -e "library('naturalsort')"           # [not win]
     - "\"%R%\" -e \"library('naturalsort')\""  # [win]
 
 about:
   home: https://CRAN.R-project.org/package=naturalsort
-  license: BSD-3-Clause
+  license: BSD_3_clause
   summary: Provides functions related to human natural ordering. It handles adjacent digits in
     a character sequence as a number so that natural sort function arranges a character
     vector by their numbers, not digit characters. It is typically seen when operating
@@ -43,7 +43,6 @@ about:
     naturally ordered because 1 < 2 < 10 and natural sort algorithm arranges so whereas
     general sort algorithms arrange it into a-1.png, a-10.png, a-2.png owing to their
     third and fourth characters.
-  license_file: LICENSE
   license_family: BSD
 
 extra:
@@ -52,3 +51,22 @@ extra:
     - bgruening
     - daler
     - jdblischak
+    - cbrueffer
+    - dbast
+
+# Package: naturalsort
+# Type: Package
+# Title: Natural Ordering
+# Version: 0.1.3
+# Suggests: testthat
+# Date: 2016-08-30
+# Author: Kosei Abe
+# Maintainer: Kosei Abe <mail@recyclebin.jp>
+# Description: Provides functions related to human natural ordering. It handles adjacent digits in a character sequence as a number so that natural sort function arranges a character vector by their numbers, not digit characters. It is typically seen when operating systems lists file names. For example, a sequence a-1.png, a-2.png, a-10.png looks naturally ordered because 1 < 2 < 10 and natural sort algorithm arranges so whereas general sort algorithms arrange it into a-1.png, a-10.png, a-2.png owing to their third and fourth characters.
+# License: BSD_3_clause + file LICENSE
+# BugReports: https://github.com/kos59125/naturalsort/issues
+# RoxygenNote: 5.0.1
+# NeedsCompilation: no
+# Packaged: 2016-08-30 05:50:59 UTC; abe
+# Repository: CRAN
+# Date/Publication: 2016-08-30 12:48:28
