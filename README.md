@@ -1,8 +1,6 @@
 About r-naturalsort
 ===================
 
-[![Powered by NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](http://numfocus.org)
-
 Home: https://CRAN.R-project.org/package=naturalsort
 
 Package license: BSD_3_clause
@@ -16,8 +14,15 @@ Summary: Provides functions related to human natural ordering. It handles adjace
 Current build status
 ====================
 
-All platforms:
-[![noarch](https://img.shields.io/circleci/project/github/conda-forge/r-naturalsort-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/r-naturalsort-feedstock)
+
+<table><tr><td>All platforms:</td>
+    <td>
+      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=1387&branchName=master">
+        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-naturalsort-feedstock?branchName=master">
+      </a>
+    </td>
+  </tr>
+</table>
 
 Current release info
 ====================
@@ -50,6 +55,8 @@ conda search r-naturalsort --channel conda-forge
 
 About conda-forge
 =================
+
+[![Powered by NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](http://numfocus.org)
 
 conda-forge is a community-led conda channel of installable packages.
 In order to provide high-quality builds, the process has been automated into the
@@ -111,6 +118,7 @@ Feedstock Maintainers
 
 * [@bgruening](https://github.com/bgruening/)
 * [@cbrueffer](https://github.com/cbrueffer/)
+* [@conda-forge/r](https://github.com/conda-forge/r/)
 * [@daler](https://github.com/daler/)
 * [@dbast](https://github.com/dbast/)
 * [@jdblischak](https://github.com/jdblischak/)
