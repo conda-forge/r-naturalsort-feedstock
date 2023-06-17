@@ -1,11 +1,11 @@
-About r-naturalsort
-===================
+About r-naturalsort-feedstock
+=============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-naturalsort-feedstock/blob/main/LICENSE.txt)
 
 Home: https://CRAN.R-project.org/package=naturalsort
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-naturalsort-feedstock/blob/main/LICENSE.txt)
 
 Summary: Provides functions related to human natural ordering. It handles adjacent digits in a character sequence as a number so that natural sort function arranges a character vector by their numbers, not digit characters. It is typically seen when operating systems lists file names. For example, a sequence a-1.png, a-2.png, a-10.png looks naturally ordered because 1 < 2 < 10 and natural sort algorithm arranges so whereas general sort algorithms arrange it into a-1.png, a-10.png, a-2.png owing to their third and fourth characters.
 
